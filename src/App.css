@@ -1,0 +1,499 @@
+* {
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+ 
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 13px;
+    font-family: arial, helvetica, Times New Roman;
+    color: #061C37;
+    background-color: #1C47BE;
+    background-image: url(../public/background.png);
+    background-repeat:repeat-x;
+
+	
+}
+#register-o{
+	margin-top: 5px;
+	margin-left: 5px;
+	padding-left: 20px;
+	margin-bottom: 15px;
+}
+#pro{
+	margin-left:15px;
+}
+
+#container {
+    width: 960px;
+}
+ 
+header {
+    width: 960px;
+    height: 85px;
+}
+ 
+header h1 {
+    color: #ffffff;
+    float: left;
+    font-size: 43px;
+    padding: 20px 0 0 20px;
+}
+ 
+header h2 {
+    float: right;
+    color: #A9D1FA;
+    padding: 40px 20px 0 0;
+}
+ 
+header h1 span.blueText {
+    color: #67ADF5;
+}
+ 
+header h2 span.whiteText {
+    color: #FFFFFF;
+}
+ 
+#displayName {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    float: right;
+    padding-right: 15px;
+}
+ 
+#menu {
+    display: block;
+    float: left;
+    clear: both;
+    width: 960px;
+    height: 54px;
+   
+}
+ 
+#menu ul {
+    list-style: none;
+    padding: 7px 0 0 0;
+    margin-left: auto;
+    width: 960px;
+    /* padding-bottom: 5px;*/
+}
+ 
+#menu li    {
+    list-style: none;
+    padding: 0;
+    display: inline;
+   
+}
+ 
+#menu li a, #menu li a:visited {
+    float: left;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 13px 0 10px;
+}
+ 
+aside {
+    color: #FFFFFF;
+}
+ 
+aside input[type="text"], input[type="email"] {
+    margin-bottom: 10px;
+}
+ 
+h2 .find{
+    padding: 10px 20px 0 0;
+}
+ 
+ 
+section {
+  display: block;
+  width: 680px;
+  margin-top: 15px;
+  float: left;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 6px solid #1C478E;
+  padding: 15px;
+  margin-left: 30px; /* Increase margin-left to add space between Home and leftMenu */
+}
+ 
+#leftMenu ul {
+    list-style:none;
+    padding: 0;
+}
+ 
+#leftMenu h3 {
+    color: #ffffff;
+    padding: 0;
+    padding-bottom: 8px;
+    border-bottom: #fff solid 2px;
+    font-size: 16px;
+}
+ 
+#leftMenu li {
+    list-style: none;
+    padding: 15px 0 8px 0;
+    border-bottom: 1px dashed #fff;
+}
+ 
+#leftMenu a, #menu a:visited {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+ 
+h2 {
+    padding-top: 0px;
+    padding-bottom: 10px;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+ 
+ 
+ 
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #054DBC;
+    padding: 5px 0;
+}
+ 
+h4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #054DBC;
+    padding-bottom: 5px;
+}
+ 
+.float {
+    float: right;
+    margin: 15px;
+}
+ 
+.developer {
+    width: 170px;
+    float: right;
+}
+ 
+.developer ul {
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+ 
+.developer li {
+    list-style: none;
+    line-height: 1.7em;
+}
+ 
+table, tr, td, th {
+    margin: 0;
+}
+ 
+table {
+    padding: 10px 0 10px 0;
+}
+ 
+th {
+    text-align: center;
+}
+ 
+td {
+    padding: 5px 20px 5px 20px;
+}
+ 
+a {
+    text-decoration: none;
+}
+ 
+table.dev-table, table.dev-table tr, table.dev-table th, table.dev-table td {
+    font-size: 110%;
+}
+ 
+table.dev-table tr, table.dev-table th, table.dev-table td {
+    border-bottom: 1px dashed #000000;
+}
+ 
+label {
+    display: inline-block;
+    width: 150px;
+}
+footer {
+    display:block;
+    position:relative;
+    clear: both;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 0;
+    margin:0;
+    height:40px;
+    width: 100vw;
+    left:0;
+    bottom:0;
+    background:#000000;
+  }
+ 
+ 
+ 
+input {
+    margin: 0 5px 0 5px;
+}
+ 
+p {
+    margin: 5px;
+}
+ 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+ 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+ 
+.dropbtn {
+  background-color:  #1C478E; /* Matching the background color of #leftMenu */
+  color: #ffffff; /* Matching the text color of #menu li a */
+  /* padding: 5px 5px; Adjusting padding to ensure proper spacing */
+  font-size: 15px; /* Matching the font size of #menu li a */
+  font-weight: bold; /* Matching the font weight of #menu li a */
+  border: none;
+  cursor: pointer;
+  border-radius: 10px; /* Adding border-radius to match the style of #leftMenu */
+  justify-content: center;
+}
+ 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1C478E; /* Matching the background color of section */
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px; /* Adding border-radius to match the style of section */
+  border: 6px solid #1C478E; /* Matching the border style of section */
+  top: 100%; /* Ensuring the dropdown content appears below the button */
+  left: 0;
+ 
+}
+ 
+.dropdown-content a {
+  color: #061C37; /* Matching the text color of body */
+  padding: 2px 5px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px; /* Matching the font size of #leftMenu a */
+  font-weight: bold; /* Matching the font weight of #leftMenu a */
+}
+ 
+.dropdown-content a:hover {
+  background-color: #4758b8;
+}
+ 
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ 
+.dropdown:hover .dropbtn {
+  background-color: #054DBC; /* Matching the hover color of h3 */
+}
+ 
+ 
+.f1{
+  margin-top: 15px;
+  border-radius:10px;
+  border-color:#1C478E;
+  border-width:5px;
+  height: 420px;
+ 
+}
+ 
+.f2{
+  border-radius:10px;
+  border-color:#1C478E;
+  border-width:5px;
+}
+ 
+.f{
+  /* padding-top: 31px; */
+  /* margin-top: -10px; */
+}
+ 
+.c1{
+  height:100px;
+}
+ 
+.img1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh; /* Adjust as needed */
+    max-width: 100%;
+}
+/* .footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+   padding: 20px 0;
+  width: 100vw;
+  position: relative;
+  bottom: 0;
+  left:0;
+  margin-top: 20px;
+ 
+}*/
+ 
+.footer-container {
+  max-width: 100%;
+  margin:auto;
+  padding:0 20px;
+  text-align: center;
+ 
+}
+body,html{
+    margin:0;
+    padding:0;
+   
+}
+ 
+.br1{
+    border-radius:10px;
+    border-color:#1C478E;
+     border-width:5px;
+}
+ 
+ 
+ 
+ .table-borderless tbody tr td, .table-borderless thead tr th {
+    border: none;
+    font-size: 15px;
+  }
+ 
+ 
+  .bdr1{
+    border-color:#1C478E;
+    border-radius: 10px;
+    border-width: 5px;
+  }
+  #leftMenu {
+    margin-top: 5px;
+    margin-right: 20px;
+    width: 190px;
+    float: left;
+    background: #1C478E;
+    border-radius: 10px;
+    padding: 15px 20px 10px 10px;
+  }
+ 
+ 
+  /* .card {
+     width: calc(100% - 210px);
+      margin-left: 210px;
+   
+   }  */
+ 
+   
+.brd2{
+    border-radius:10px;
+    border-color:#1C478E;
+  border-width:5px;
+}
+
+#rr {
+	margin-right: 5px;
+}
+
+#ar {
+	margin-left: 13px;
+}
+
+#pa {
+	margin-left: 13.78px;
+}
+
+#sec {
+	
+	background-color: white;
+	border: 5px solid #1C478E;
+	margin-top: 5px;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	height: 550px;
+	width: 680px;
+	margin-left: 10px;
+	border-radius: 10px;
+}
+
+#reg{
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+
+#av{
+	margin-left: 5px;
+}
+
+#a-b{
+	border-width: 5px;
+	border-radius: 10px;
+	border-color: #1C478E;
+	margin-bottom: 25px;
+	padding-top: 10px;
+}
+
+#re{
+	background-color: #FFFFFF;
+	border: 3px solid #1C478E;
+	height: 70px;
+	text-align: center;
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+#appl{
+	border-width: 5px;
+	border-radius: 10px;
+	border-color: #1C478E;
+	margin-bottom: 25px;
+}
+/* Project.css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px; /* Adjust the margin as needed */
+}
+
+.pagination .previous,
+.pagination .next {
+    margin-right: 20px; /* Add space between previous/next and page numbers */
+    margin-left: 20px; /* Add space between previous/next and page numbers */
+}
+/* BrowseDeveloper.css */
+.table th.dev-id {
+    width: 25%;
+}
+
+.table th.skills {
+    width: 20%;
+}
+
