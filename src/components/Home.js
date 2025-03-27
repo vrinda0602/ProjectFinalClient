@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Web from '../images/web folder/web.jpg';
- 
+
 const Home = () => {
   const [developers, setDevelopers] = useState([]);
- 
+
   useEffect(() => {
     fetch('http://localhost:8000/browse//dev/latest')
       .then(response => response.json())
@@ -16,9 +16,9 @@ const Home = () => {
         console.error('Error fetching latest developers:', error);
       });
   }, []);
- 
+
   return (
-    <div className="container" >
+    <div className="container">
       {/* Welcome Section */}
       <div className="card p-4 mb-4 f1" id='register-o'>
         <div className="row">
@@ -38,19 +38,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-     
+
       {/* Developers Section */}
       <div className="card p-4 f2" id='a-b'>
-        <h2 className="mb-3" >Latest DCX Developers</h2>
+        <h2 className="mb-3">Latest DCX Developers</h2>
         <div className="row">
           {developers.map((dev, index) => (
-            <div key={index} className="col-md-3 mb-3">
-              <div className="card h-100 shadow-sm p-3 c1">
+            <div key={index} className="col-md-3 mb-2">
+              <div className="card h-100 shadow-sm p-2 c1 developer-card">
                 <h5 className="text-primary">{dev.firstName} {dev.lastName}</h5>
                 <p><strong>Location:</strong> {dev.dev_location}</p>
-                <p><strong>Skills:</strong> { dev.skills}</p>
+                <p><strong>Skills:</strong> {dev.skills.join(", ")}</p>
                 <p><strong>Availability:</strong> {dev.availability}</p>
-                <a href="#" className="btn btn-primary btn-sm">View Profile</a>
+                <a href="#" className="btn btn-primary btn-sm view-profile-btn">View Profile</a>
               </div>
             </div>
           ))}
@@ -59,6 +59,5 @@ const Home = () => {
     </div>
   );
 };
- 
-export default Home;
 
+export default Home;

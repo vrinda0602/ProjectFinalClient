@@ -25,20 +25,20 @@ const Project = () => {
     setCurrentPage(event.selected);
   };
 
-  const offset = currentPage * projectsPerPage;
-  const currentProjects = projects.slice(offset, offset + projectsPerPage);
+  const offset = currentPage * projectsPerPage;//2*6=12
+  const currentProjects = projects.slice(offset, offset + projectsPerPage);//12,18
 
   return (
     <div className="container mt-2">
       <div className="card p-4 mb-4 br1" id='pro'>
-        <h2 className="mb-4" style={{ color:'#275fb9'}}>Our Projects</h2>
+        <h2 className="mb-4" style={{ color: '#275fb9' }}>Our Projects</h2>
         <div className="row">
           {currentProjects.map((project, index) => (
             <div key={index} className="col-md-4 mb-3">
               <div className="card h-100 shadow-sm p-3">
                 <h5 className="text-primary">{project.projectName}</h5>
                 <p><strong>Project_Id:</strong> {project._id}</p>
-                <p><strong>Organisation:</strong> {project.organisationName}</p>
+                <p><strong>Organisation:</strong> {project.orgName}</p>
                 <p><strong>Description:</strong> {project.projectDescription}</p>
                 <p><strong>Skills Required:</strong> {project.skillsRequired.join(', ')}</p>
               </div>

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
- 
- 
+
+
 const Register = () => {
   const [formData, setFormData] = useState({
     DEVId: '',
@@ -14,11 +14,10 @@ const Register = () => {
     proficiency: '',
     yearsOfExperience: '',
     skills: [],
-    // projects: '',
     resume: '',
     dev_location: '',
   });
- 
+
   const [developers, setDevelopers] = useState([]);
   const [editing, setEditing] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -26,11 +25,11 @@ const Register = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [developerId, setDeveloperId] = useState('');
- 
+
   useEffect(() => {
     fetchDevelopers();
   }, []);
- 
+
   const fetchDevelopers = async () => {
     try {
       const response = await axios.get('http://localhost:8000/register');
@@ -40,22 +39,6 @@ const Register = () => {
       setErrorMessage('Error fetching developers. Please try again.');
     }
   };
- 
-  // const handleChange = (e) => {
-  //   const { name, value, files } = e.target;
-  //   if (name === 'resume') {
-  //     const file = files[0];
-  //     const reader = new FileReader();
-  //     reader.onloadend = () => {
-  //       setFormData({ ...formData, resume: reader.result });
-  //     };
-  //     reader.readAsDataURL(file);
-  //   } else {
-  //     setFormData({ ...formData, [name]: value });
-  //   }
-  // };
-
-
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -64,7 +47,7 @@ const Register = () => {
       setFormData({ ...formData, skills: skillsArray });
     } else if (name === 'resume') {
       const file = files[0];
-      const reader = new FileReader();
+      const reader = new FileReader();//to read URL path
       reader.onloadend = () => {
         setFormData({ ...formData, resume: reader.result });
       };
@@ -73,7 +56,7 @@ const Register = () => {
       setFormData({ ...formData, [name]: value });
     }
   };
- 
+
   const validateForm = () => {
     const requiredFields = ['firstName', 'lastName', 'email', 'availability', 'yearsOfExperience', 'skills', 'dev_location'];
     for (let field of requiredFields) {
@@ -85,11 +68,11 @@ const Register = () => {
     return true;
   };
 
- 
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();//prevent default function of submitting
     if (!validateForm()) return;
- 
+
     const formDataToSend = { ...formData };
     try {
       let response;
@@ -116,7 +99,7 @@ const Register = () => {
       setErrorMessage('Error submitting form. Please try again.');
     }
   };
- 
+
   const handleEdit = async (e) => {
     e.preventDefault();
     try {
@@ -129,7 +112,7 @@ const Register = () => {
       setErrorMessage('Error fetching developer. Please try again.');
     }
   };
- 
+
   const fetchDeveloperById = async (e) => {
     e.preventDefault();
     try {
@@ -145,12 +128,12 @@ const Register = () => {
       setErrorMessage('Error fetching developer. Please try again.');
     }
   };
- 
+
   const handleDelete = async (e) => {
     e.preventDefault();
     setDeleting(true);
   };
- 
+
   const deleteDeveloperById = async (e) => {
     e.preventDefault();
     try {
@@ -180,7 +163,7 @@ const Register = () => {
       setErrorMessage('Error deleting developer. Please try again.');
     }
   };
- 
+
   return (
     <div>
       {successMessage ? (
@@ -265,8 +248,8 @@ const Register = () => {
               <button onClick={deleteDeveloperById}>Delete Developer</button>
             </p>
           )}
-          <br/>
-         
+          <br />
+
           <button type="submit" style={{ marginRight: '10px' }} onClick={handleSubmit}>
             {editing ? 'Update' : 'Register'}
           </button>
@@ -276,14 +259,13 @@ const Register = () => {
           <button onClick={handleDelete}>Delete</button>
         </form>
       )}
-     
+
     </div>
   );
 };
- 
+
 export default Register;
-           
- 
- 
- 
- 
+
+
+
+

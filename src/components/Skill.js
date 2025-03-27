@@ -8,8 +8,8 @@ import '../App.css'; // Import the CSS file for styling
 const Skill = () => {
   const { skill } = useParams(); // useParams is a hook that is used as a function
   const [developers, setDevelopers] = useState([]);
-  const [loading, setLoading]= useState(false);
-  const [error, setError]= useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -31,7 +31,7 @@ const Skill = () => {
   return (
     <div className="container mt-2" id='register-o'>
       <div className="card p-4 mb-4 bdr1">
-        <h2 className="mb-4" style={{ color:'#275fb9'}}>Developers with {skill} skills</h2>
+        <h2 className="mb-4" style={{ color: '#275fb9' }}>Developers with {skill} skills</h2>
         <table className="table table-borderless" style={{ width: '100%' }}>
           <thead>
             <tr>

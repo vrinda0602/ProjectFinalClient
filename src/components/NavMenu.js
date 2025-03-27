@@ -19,7 +19,7 @@ const NavMenu = () => {
           <div className="dropdown">
             <button className="dropbtn">Apply As</button>
             <div className="dropdown-content">
-              <Link to="/applyDev">Developer</Link><br/>
+              <Link to="/applyDev">Developer</Link><br />
               <Link to="/applyOrg">Organisation</Link>
             </div>
           </div>

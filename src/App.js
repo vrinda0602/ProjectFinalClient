@@ -16,10 +16,10 @@ import ApplyAsOrganisation from './components/ApplyAsOrganisation';
 import ApplyAsDeveloper from './components/ApplyAsDeveloper';
 // import DeveloperForm from './components/developer';
 
- 
+
 const App = () => {
   return (
-   <div>
+    <div>
       <div id='container'>
         <Header />
         <NavMenu />
@@ -33,7 +33,7 @@ const App = () => {
               <Route path="/projects" element={<Project />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/register" element={<RegisterDev />} />
-              <Route path="/skills/:skill" element={<Skill />} /> 
+              <Route path="/skills/:skill" element={<Skill />} />
               <Route path="/ContactForm" element={<ContactForm />} />
               <Route path="/BrowseDeveloper" element={<BrowseDeveloper />} />
               <Route path="/applyOrg" element={<ApplyAsOrganisation />} />
@@ -41,13 +41,13 @@ const App = () => {
             </Routes>
           </div>
         </div>
-       
+
       </div>
-      <Footer/>
-      </div>
-   
+      <Footer />
+    </div>
+
   );
 };
- 
+
 export default App;
 

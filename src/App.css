@@ -497,3 +497,15 @@ body,html{
     width: 20%;
 }
 
+.developer-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top:3px;
+    padding-bottom: 3px;
+  }
+ 
+  .view-profile-btn {
+    align-self: flex-end;
+  }
+ 

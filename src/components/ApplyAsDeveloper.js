@@ -9,6 +9,7 @@ const ApplyAsDeveloper = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchApplications();
@@ -17,8 +18,9 @@ const ApplyAsDeveloper = () => {
   const fetchApplications = async () => {
     const response = await fetch('http://localhost:8000/organisation/get');
     const data = await response.json();
+    console.log(data); // Log the data to verify its structure
     setApplications(data);
-  };
+};
 
   const handleAddProjectId = () => {
     setProjectIds([...projectIds, '']);
@@ -39,32 +41,41 @@ const ApplyAsDeveloper = () => {
     e.preventDefault();
     const newApplication = { developerId, projectIds };
     try {
+      let response;
       if (isEditing) {
-        await fetch(`http://localhost:8000/organisation/${editId}`, {
+        response = await fetch(`http://localhost:8000/organisation/${editId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(newApplication)
         });
-        setMessage('Application updated successfully!');
-        setIsEditing(false);
-        setEditId(null);
       } else {
-        await fetch('http://localhost:8000/organisation/add', {
+        response = await fetch('http://localhost:8000/organisation/add', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(newApplication)
         });
-        setMessage('Application submitted successfully!');
       }
-      fetchApplications();
-      setDeveloperId('');
-      setProjectIds(['']);
+
+      const result = await response.json();
+      if (response.ok) {
+        setMessage(isEditing ? 'Application updated successfully!' : 'Application submitted successfully!');
+        setError('');
+        fetchApplications();
+        setDeveloperId('');
+        setProjectIds(['']);
+        setIsEditing(false);
+        setEditId(null);
+      } else {
+        setMessage('');
+        setError(result.message || 'An error occurred. Please try again.');
+      }
     } catch (error) {
-      setMessage('An error occurred. Please try again.');
+      setMessage('');
+      setError('An error occurred. Please try again.');
     }
   };
 
@@ -78,13 +89,21 @@ const ApplyAsDeveloper = () => {
 
   const handleDeleteApplication = async (id) => {
     try {
-      await fetch(`http://localhost:8000/organisation/${id}`, {
+      const response = await fetch(`http://localhost:8000/organisation/${id}`, {
         method: 'DELETE'
       });
-      setMessage('Application deleted successfully!');
-      fetchApplications();
+      const result = await response.json();
+      if (response.ok) {
+        setMessage('Application deleted successfully!');
+        setError('');
+        fetchApplications();
+      } else {
+        setMessage('');
+        setError(result.message || 'An error occurred. Please try again.');
+      }
     } catch (error) {
-      setMessage('An error occurred. Please try again.');
+      setMessage('');
+      setError('An error occurred. Please try again.');
     }
   };
 
@@ -93,6 +112,7 @@ const ApplyAsDeveloper = () => {
     setProjectIds(['']);
     setIsEditing(false);
     setMessage('');
+    setError('');
   };
 
   return (
@@ -101,6 +121,7 @@ const ApplyAsDeveloper = () => {
         <h2 className="mb-4" style={{ color: '#275fb9', textAlign: 'left' }}>Apply As Developer</h2>
        
         {message && <Alert variant="info">{message}</Alert>}
+        {error && <Alert variant="danger">{error}</Alert>}
        
         <Form onSubmit={handleSubmit} className="p-4 border">
           {/* Developer ID */}
@@ -148,7 +169,8 @@ const ApplyAsDeveloper = () => {
  
         <div className="col-md-12 mt-4">
           <h5 style={{ color: '#0000ff', textAlign: 'left' }}>Applications List</h5>
-          <ul className="list-group">
+          {Array.isArray(applications) && applications.length > 0 ? (
+           <ul className="list-group">
             {applications.map(app => (
               <li key={app._id} className="list-group-item d-flex justify-content-between align-items-center">
                 {app.developerId} - {app.projectIds ? app.projectIds.join(', ') : 'No Project IDs'}
@@ -159,6 +181,9 @@ const ApplyAsDeveloper = () => {
               </li>
             ))}
           </ul>
+          ) : (
+            <p>No Applications found</p>
+          )}
         </div>
       </div>
     </div>

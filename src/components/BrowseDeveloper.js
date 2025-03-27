@@ -46,7 +46,7 @@ const BrowseDeveloper = () => {
     return (
         <div className="container mt-2 f">
             <div className="card p-4 mb-4 bdr1">
-                <h2 className="mb-4" style={{ color:'#275fb9', textAlign: 'left' }}>Browse Developers</h2>
+                <h2 className="mb-4" style={{ color: '#275fb9', textAlign: 'left' }}>Browse Developers</h2>
                 <table className="table table-borderless" style={{ width: '100%' }}>
                     <thead>
                         <tr>

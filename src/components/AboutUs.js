@@ -33,7 +33,7 @@ const AboutUs = () => {
     <div className="container mt-2 f">
       <div className="card p-4 shadow" id='a-b' style={{ borderColor: '#1C478E', maxWidth: '800px' }}>
         <h2 className="mb-4" style={{ textAlign: 'left' }}>DCX Developer Directory!</h2>
-        
+
         <div className="row">
           <div className="col-md-12">
             <h5 style={{ color: '#0000ff', textAlign: 'left' }}>Who Are We?</h5>
@@ -41,7 +41,7 @@ const AboutUs = () => {
               We are a fictional website and service that lists top web developers around the world.
               Search and browse developers on our website, absolutely FREE!
             </p>
-            
+
             <h5 style={{ color: '#0000ff', textAlign: 'left' }}>What Skills Do Our Developers Have?</h5>
             <p style={{ textAlign: 'left' }}>
               Our listed fictional web developers’ skills range from graphic design with Photoshop, Illustrator,
@@ -49,7 +49,7 @@ const AboutUs = () => {
               JavaScript, PHP, Python, and ASP.
             </p>
           </div>
-          
+
           <div className="col-md-11">
             <video
               ref={videoRef}

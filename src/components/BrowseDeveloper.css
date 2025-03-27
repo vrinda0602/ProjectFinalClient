@@ -1,5 +1,5 @@
-
-.developer-table th, .developer-table td {
+.developer-table th,
+.developer-table td {
     border: 1px solid #f2ecec;
     padding: 4px;
 }
@@ -7,22 +7,27 @@
 .developer-table th {
     background-color: #f0eaea;
     text-align: left;
-} 
+}
+
 .developer-table tr:hover {
     background-color: #ddd;
-} */
-.container {
+}
+
+*/ .container {
     display: flex;
     background-color: #f0eaea;
 }
 
 .sidebar {
-    width: 200px; /* Adjust the width as needed */
-    background-color: #f4f4f4; /* Example background color */
+    width: 200px;
+    /* Adjust the width as needed */
+    background-color: #f4f4f4;
+    /* Example background color */
     padding: 20px;
 }
-#bd{
-    color:#1C478E;
+
+#bd {
+    color: #1C478E;
 
 }
 
@@ -33,16 +38,18 @@
 }
 
 /*added part */
-section {display: block;
-        width: 680px;
-        margin-top: 15px;
-        float: left;
-        background: #ffffff;
-        border-radius: 10px;
-        border: 6px solid #1C478E;
-        padding: 15px;
-        margin-left: 15px;
+section {
+    display: block;
+    width: 680px;
+    margin-top: 15px;
+    float: left;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 6px solid #1C478E;
+    padding: 15px;
+    margin-left: 15px;
 }
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -51,14 +58,18 @@ section {display: block;
 }
 
 .pagination li {
-    margin: 0 5px; /* Adjust the margin as needed */
+    margin: 0 5px;
+    /* Adjust the margin as needed */
 }
 
 .pagination .previous,
 .pagination .next {
-    margin-right: 20px; /* Add space between previous/next and page numbers */
-    margin-left: 20px; /* Add space between previous/next and page numbers */
+    margin-right: 20px;
+    /* Add space between previous/next and page numbers */
+    margin-left: 20px;
+    /* Add space between previous/next and page numbers */
 }
+
 /* BrowseDeveloper.css */
 .table th.dev-id {
     width: 20%;

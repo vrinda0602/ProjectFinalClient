@@ -104,9 +104,9 @@ const ApplyAsOrganisation = () => {
     <div className="container mt-2" id='appl'>
       <div className="card p-4 shadow" id='a-b' style={{ borderColor: '#1C478E', maxWidth: '800px' }}>
         <h2 className="mb-4" style={{ color: '#275fb9', textAlign: 'left' }}>Apply As Organisation</h2>
-        
+
         {message && <Alert variant="info">{message}</Alert>}
-        
+
         <Form onSubmit={handleSubmit} className="p-4 border">
           {/* Organisation ID */}
           <Form.Group className="mb-3" controlId="organisationId">
@@ -118,7 +118,7 @@ const ApplyAsOrganisation = () => {
               required
             />
           </Form.Group>
-  
+
           {/* Developer IDs */}
           {developerIds.map((developerId, index) => (
             <InputGroup className="mb-2" key={index}>
@@ -134,12 +134,12 @@ const ApplyAsOrganisation = () => {
               </Button>
             </InputGroup>
           ))}
-  
+
           {/* Add More Button */}
           <Button variant="outline-primary" onClick={handleAddDeveloperId} className="mb-3">
             Add More
           </Button>
-  
+
           {/* Submit and Reset Buttons */}
           <div className="d-flex gap-2">
             <Button type="submit" variant="primary">
